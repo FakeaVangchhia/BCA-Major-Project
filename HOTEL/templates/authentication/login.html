@@ -1,0 +1,17 @@
+{% extends 'hotel/base.html' %}
+
+{% block content %}
+{% block title %} Login {% endblock %}
+<h2>Login</h2>
+<br><br>
+<br><br>
+<br><br>
+<div class='container'>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <p>If you don't have Account you can signup <a herf={% url 'HOTEL:signup' %}>here</a><p>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'hotel/base.html' %}
+
+{% block content %}
+<br><br><br><br><br>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 mt-5">
+      <div class="card">
+        <div class="card-body text-center">
+          <i class="fa fa-check-circle fa-5x text-success mb-3" aria-hidden="true"></i>
+          <h4 class="card-title">Room added successfully!</h4>
+          <p class="card-text">Room no: {{ room_number }}</p>
+          <button class="btn btn-outline-warning" onclick="location.href='{% url 'HOTEL:index' %}'">Return Home</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+
+<style>
+  /* Style for the success icon */
+  .fa-check-circle {
+    animation: check-circle .5s ease-in-out;
+  }
+  @keyframes check-circle {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Style for the success message */
+  .card {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+</style>
+{% endblock%}

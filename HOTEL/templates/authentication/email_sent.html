@@ -1,0 +1,45 @@
+{% extends 'hotel/base.html' %}
+
+{% block content %}
+<br><br><br><br><br>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <div class="card mb-3">
+        <div class="card-body text-center">
+            <h4 class="display-4 mb-4" style="font-family: 'Brush Script MT', cursive;">Thank you for your message!</h4>
+          <p class="card-text">You have successfully sent your email. We will respond to you as soon as possible.</p>
+          <button class="btn btn-outline-warning" onclick="location.href='{% url 'HOTEL:index' %}'">Go back to home page</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .display-4 {
+    font-size: 40px;
+    color: #00ffbf;
+  }
+
+  .card-text {
+    font-size: 20px;
+    color: 	#FFD700;
+  }
+
+  .card {
+    animation: fadeInUp 1.5s both;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+{% endblock %}

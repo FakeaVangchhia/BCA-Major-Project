@@ -1,0 +1,75 @@
+{% extends 'hotel/base.html' %}
+
+{% block content %}
+{% block title  %} Search Room {% endblock %}
+
+<div class='container' style='padding-top: 150px' >
+  <div class="room-search-form">
+    <h2>Find Your Perfect Room</h2>
+    <form method="GET" action="{% url 'HOTEL:search-room' %}">
+      <div class="form-group">
+        <label for="start-date">Check-in Date:</label>
+        <input type="date" class="form-control" name="start_date" id="start-date" value="{{ start_date }}" required>
+      </div>
+      <div class="form-group">
+        <label for="end-date">Check-out Date:</label>
+        <input type="date" class="form-control" name="end_date" id="end-date" value="{{ end_date }}" required>
+      </div>
+      <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Search Rooms</button>
+    </form>
+  </div>
+  <br><br>
+  <!-- Room Start -->
+  {% if start_date and end_date %}
+    {% if available_rooms_list %}
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title text-center text-primary text-uppercase">Our Rooms</h6>
+          <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Rooms</span></h1>
+        </div>
+        <div class="row g-4 flex-row-reverse">
+          {% for room in available_rooms_list %}
+            <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="room-item shadow rounded overflow-hidden">
+                <div class="position-relative">
+                  <img class="img-fluid" src="{{ room.image }}" alt="">
+                </div>
+                <div class="p-4 mt-2">
+                  <div class="d-flex justify-content-between mb-3">
+                    <h5 class="mb-0">{{ room.room_number }}</h5>
+                    <div class="ps-2">
+                      <small class="fa fa-star text-primary"></small>
+                      <small class="fa fa-star text-primary"></small>
+                      <small class="fa fa-star text-primary"></small>
+                      <small class="fa fa-star text-primary"></small>
+                      <small class="fa fa-star text-primary"></small>
+                    </div>
+                    <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">₹{{ room.price }}</small>
+                  </div>
+                  <div class="d-flex mb-3">
+                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>{{ room.room_type }} </small>                              
+                    <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+                  </div>
+                  <p class="text-body mb-3">{{ room.room_description }}</p>
+                  <div class="d-flex justify-content-between">
+                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="#">Room no.{{ room.room_number }}</a>
+                      <a class="btn btn-sm btn-dark rounded py-2 px-4" href="{% url 'HOTEL:reserve-room' room.room_number %}">Book Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          <br>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+{% else %}
+  <h4>No rooms available for the selected dates.</h4>
+{% endif %}
+{% endif %}
+</div>
+<!-- Room End -->
+{% endblock %}

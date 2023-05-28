@@ -1,0 +1,194 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>{% block title %} HOTEL CHAWNGTHU {% endblock %} </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'HotelChawngthu/images/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'HotelChawngthu/images/apple-touch-icon.png' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'HotelChawngthu/css/bootstrap.min.css' %}">
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'HotelChawngthu/css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'HotelChawngthu/css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'HotelChawngthu/css/custom.css' %}">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Room display animation -->
+    <!-- Include Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</head>
+
+<body>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="{% url 'HOTEL:index' %}">
+					<img src="{% static 'HotelChawngthu/images/chawgthu.png' %}" alt="" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+                        {% if user.is_authenticated %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:index' %}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:menu' %}">Menu</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:about' %}">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:dashboard' %}">Dashboard</a></li>
+                            {% if user.is_staff %}
+                                <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:add-room' %}">Add room</a></li>
+                            {% endif %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Reservation</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                    <a class="dropdown-item" href="{% url 'HOTEL:table-reservation' %}">Table</a>
+                                    <a class="dropdown-item" href="{% url 'HOTEL:search-room' %}">Room</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:contact' %}">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:gallery' %}">Gallery</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:logout' %}">Logout</a></li>
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:index' %}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:menu' %}">Menu</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:about' %}">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:gallery' %}">Gallery</a></li>
+						    <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:login' %}">Login</a></li>
+						    <li class="nav-item"><a class="nav-link" href="{% url 'HOTEL:signup' %}">Signup</a></li>
+                        {% endif %}
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+
+{% block content %}
+
+{% endblock %}
+
+<!-- Start Contact info -->
+<div class="contact-imfo-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <i class="fa fa-volume-control-phone"></i>
+                <div class="overflow-hidden">
+                    <h4>Phone</h4>
+                    <p class="lead">
+                        +91 98625 26788
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-envelope"></i>
+                <div class="overflow-hidden">
+                    <h4>Email</h4>
+                    <p class="lead">
+                        hotelchawngthu@gmail.com
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-map-marker"></i>
+                <div class="overflow-hidden">
+                    <h4>Location</h4>
+                    <p class="lead">
+                        Vengthlang, Champhai
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Contact info -->
+
+<!-- Start Footer -->
+<footer class="footer-area bg-f">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <h3>About Us</h3>
+                <p>The food provided here is fresh and obtained from farmers and gardeners around the area and the prices are pocket friendly too even for those who earn their daily livelihood.</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h3>Opening hours</h3>
+                <p><span class="text-color">Monday: </span>Closed</p>
+                <p><span class="text-color">Tue-Wed :</span> 9:Am - 10PM</p>
+                <p><span class="text-color">Thu-Fri :</span> 9:Am - 10PM</p>
+                <p><span class="text-color">Sat-Sun :</span> 5:PM - 10PM</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h3>Contact information</h3>
+                <p class="lead">Vengthlang north, Champhai</p>
+                <p class="lead"><a href="tel: 91 9362630203">+91 87982 45559</a></p>
+                <p><a href="#"> hotel@chawngthu.com</a></p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <ul class="list-inline f-social">
+                    <li class="list-inline-item"><a href="https://www.facebook.com/HotelChawngthu?mibextid=LQQJ4d"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://instagram.com/hotelchawngthu?igshid=ZWQyN2ExYTkwZQ=="><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="company-name">All Rights Reserved. &copy; 2023 <a href="{% url 'HOTEL:index' %}">Major Project</a> Design By : 
+                Team - 3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</footer>
+<!-- End Footer -->
+
+
+
+<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+<!-- ALL JS FILES -->
+<script src="{% static 'HotelChawngthu/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'HotelChawngthu/js/popper.min.js' %}"></script>
+<script src="{% static 'HotelChawngthu/js/bootstrap.min.js' %}"></script>
+<!-- ALL PLUGINS -->
+<script src="{% static 'HotelChawngthu/js/jquery.superslides.min.js' %}"></script>
+<script src="{% static 'HotelChawngthu/js/images-loded.min.js' %}"></script>
+<script src="{% static 'HotelChawngthu/js/isotope.min.js' %}"></script>
+<script src="{% static 'HotelChawngthu/js/baguetteBox.min.js' %}"></script>
+<script src="{% static 'HotelChawngthu/js/form-validator.min.js' %}"></script>
+<script src="{% static 'HotelChawngthu/js/contact-form-script.js' %}"></script>
+<script src="{% static 'HotelChawngthu/js/custom.js' %}"></script>
+</body>
+</html>

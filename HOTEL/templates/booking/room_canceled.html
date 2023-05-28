@@ -1,0 +1,47 @@
+{% extends 'hotel/base.html' %}
+
+{% block content %}
+{% block title  %} Cancellation Successful {% endblock %}
+
+<br><br><br>
+<br><br><br>
+<br><br><br>
+  <div class="container">
+    <h1>Reservation Canceled Successfully!</h1>
+    <p>Your reservation has been canceled successfully.</p>
+  </div>
+<br><br><br>
+  <style>
+    /* CSS styles for the cancel reservation page */
+    .container {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #6C63FF;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #444444;
+    }
+  </style>
+
+  <script>
+    // JS for the cancel reservation page
+    const title = document.querySelector('h1');
+    const paragraph = document.querySelector('p');
+    
+    // Add a pulsing animation to the title
+    let pulse = setInterval(function() {
+      title.style.fontSize = (title.style.fontSize === '3rem') ? '2.8rem' : '3rem';
+    }, 500);
+
+    // Change the color of the paragraph on click
+    paragraph.addEventListener('click', function() {
+      paragraph.style.color = (paragraph.style.color === '#444444') ? '#6C63FF' : '#444444';
+    });
+  </script>
+{% endblock %}

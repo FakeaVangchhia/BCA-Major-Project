@@ -1,0 +1,75 @@
+{% extends 'hotel/base.html' %}
+
+{% load static %}
+{% block content %}
+{% block title %} Table Reservation {% endblock %}
+<br><br><br><br>
+<div class="all-page-title page-breadcrumb">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center display-4 mb-4" style="font-family: 'Brush Script MT', cursive;">Table Reservation</h1>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container my-4">
+        {% if messages %}
+            <ul class="alert alert-danger">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <hr>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form method="post" class="card">
+                    {% csrf_token %}
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="first_name">First name:</label>
+                            <input type="text" name="first_name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last name:</label>
+                            <input type="text" name="last_name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reserve_date">Reservation date:</label>
+                            <input type="date" name="reserve_date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="start_time">From:</label>
+                            <input type="time" name="start_time" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="end_time">Upto:</label>
+                            <input type="time" name="end_time" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guest">Number of guests:</label>
+                            <input type="number" name="guest" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="table_number">Table number:</label>
+                            <select name="table_number" class="form-control" required>
+                                <option value="" disabled selected>Select a table</option>
+                                {% for choice in table_choices %}
+                                    {% if choice.0 in reserved_tables %}
+                                    <option value="{{ choice.0 }}" disabled>{{ choice.1 }} - Not Available</option>
+                                    {% else %}
+                                    <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" value="Reserve" class="btn btn-primary">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

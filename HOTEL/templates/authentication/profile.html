@@ -1,0 +1,54 @@
+{% extends 'hotel/base.html' %}
+
+{% block content %}
+{% block title %} Profile {% endblock %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container welcome-container">
+  <h1 class="welcome-title">Welcome, {{ user.username }}!</h1>
+  <p class="welcome-message">We're so glad to have you here. Let's get started on your journey to our website.</p>
+  <p class="welcome-message">Feel free to explore our Project.</p>
+
+</div>
+<br>
+<br>
+
+<script>
+// Add some cool animations here using JS or jQuery
+$('.welcome-title').animate({
+  fontSize: '5rem',
+  opacity: 1
+}, 2000);
+
+$('.welcome-message').delay(50).animate({
+  opacity: 1
+}, 2000);
+</script>
+
+<style>
+/* Add some cool CSS styles here */
+.welcome-container {
+  background-color: #ffe0b2;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  opacity: 0;
+}
+
+.welcome-message {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  opacity: 0;
+}
+</style>
+{% endblock %}

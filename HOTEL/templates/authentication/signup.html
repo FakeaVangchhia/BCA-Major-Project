@@ -1,0 +1,14 @@
+{% extends 'hotel/base.html' %}
+
+{% block content %}
+<br><br><br>
+<div class='card container md-3'>
+    <h2>Signup - please signup first, to add to cart.</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class='btn btn-secondary'>Signup</button>
+    </form>
+</div>
+<br><br><br>
+{% endblock %}

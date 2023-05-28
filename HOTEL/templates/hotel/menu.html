@@ -1,0 +1,199 @@
+{% extends 'hotel/base.html' %}
+
+
+{% load static %}
+{% block content %}
+{% block title %}Menu{% endblock %}
+
+	<!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Chawngthu Menu</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Pages -->
+	
+	<!-- Start Menu -->
+	<div class="menu-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Special Menu</h2>
+						<p>All our project menu is so special so we call it, Special Menu</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="special-menu text-center">
+						<div class="button-group filter-button-group">
+							<button class="active" data-filter="*">All</button>
+							<button data-filter=".drinks">Drinks</button>
+							<button data-filter=".lunch">Lunch</button>
+							<button data-filter=".dinner">Dinner</button>
+						</div>
+					</div>
+				</div>
+			</div>
+				
+			<div class="row special-list">
+				<div class="col-lg-4 col-md-6 special-grid drinks">
+					<div class="gallery-single fix">
+						<img src="{% static 'HotelChawngthu/images/drink1.jpg' %}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Bee's Knee's cocktail</h4>
+							<p>Gin Base niin a tui em em tih kan sawi tel hram ange.</p>
+							<h5> ₹70.00</h5>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 special-grid drinks">
+					<div class="gallery-single fix">
+						<img src="{% static 'HotelChawngthu/images/drink2.jpg' %}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Mocktail & Ice Cream</h4>
+							<p>Huaisen taka Nipui dodai thei turin lokal zeuhla,hnehna i chang animai🤞</p>
+							<h5> ₹100.00</h5>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 special-grid drinks">
+					<div class="gallery-single fix">
+						<img src="{% static 'HotelChawngthu/images/drink3.jpg' %}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Lemon & Strawberry</h4>
+							<p>Lovely and softy drinks.</p>
+							<h5> ₹140.00</h5>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 special-grid drinks">
+					<div class="gallery-single fix">
+						<img src="{% static 'HotelChawngthu/images/drink7.jpg' %}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Lemon</h4>
+							<p>Sed id magna vitae eros sagittis euismod.</p>
+							<h5> ₹90.39</h5>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 special-grid drinks">
+					<div class="gallery-single fix">
+						<img src="{% static 'HotelChawngthu/images/drink4.jpg' %}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Barbados Sunrise</h4>
+							<p>I tuina hian I lairil a fan rawih rawih thei ngei ang.</p>
+							<h5> ₹100.79</h5>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 special-grid drinks">
+					<div class="gallery-single fix">
+						<img src="{% static 'HotelChawngthu/images/drink5.jpg' %}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Vodka mango</h4>
+							<p>Looking like a fierce mess. Taste like heaven..</p>
+							<h5> ₹80.79</h5>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 special-grid lunch">
+					<div class="gallery-single fix">
+						<img src="{% static 'HotelChawngthu/images/img-04.jpg' %}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Special Lunch 1</h4>
+							<p>Sed id magna vitae eros sagittis euismod.</p>
+							<h5> ₹150.79</h5>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 special-grid lunch">
+					<div class="gallery-single fix">
+						<img src="{% static 'HotelChawngthu/images/img-05.jpg' %}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Special Lunch 2</h4>
+							<p>Sed id magna vitae eros sagittis euismod.</p>
+							<h5> ₹180.79</h5>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 special-grid lunch">
+					<div class="gallery-single fix">
+						<img src="{% static 'HotelChawngthu/images/img-06.jpg' %}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Special Lunch 3</h4>
+							<p>Sed id magna vitae eros sagittis euismod.</p>
+							<h5> ₹200.79</h5>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 special-grid dinner">
+					<div class="gallery-single fix">
+						<img src="{% static 'HotelChawngthu/images/img-07.jpg' %}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Special Dinner 1</h4>
+							<p>Sed id magna vitae eros sagittis euismod.</p>
+							<h5> ₹250.79</h5>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 special-grid dinner">
+					<div class="gallery-single fix">
+						<img src="{% static 'HotelChawngthu/images/img-08.jpg' %}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Special Dinner 2</h4>
+							<p>Sed id magna vitae eros sagittis euismod.</p>
+							<h5> ₹220.79</h5>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 special-grid dinner">
+					<div class="gallery-single fix">
+						<img src="{% static 'HotelChawngthu/images/img-09.jpg' %}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Special Dinner 3</h4>
+							<p>Sed id magna vitae eros sagittis euismod.</p>
+							<h5> ₹240.79</h5>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+	<!-- End Menu -->
+	
+	<!-- Start QT -->
+	<div class="qt-box qt-background">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 ml-auto mr-auto text-left">
+					<p class="lead ">
+						" If your having any complain about our project go talk to Zonuna Ozz. "
+					</p>
+					<span class="lead">Enga Ralte</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End QT -->
+
+{% endblock %}
+

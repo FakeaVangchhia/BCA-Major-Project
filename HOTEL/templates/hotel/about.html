@@ -1,0 +1,48 @@
+{% extends 'hotel/base.html' %}
+
+{% load static %}
+{% block content %}
+	{% block title %}About{% endblock %}
+
+	<!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>About Us</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+	
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<img src="{% static 'HotelChawngthu/images/story.jpeg' %}" alt="" class="img-fluid">
+				</div>
+				<div class="col-lg-6 col-md-6 text-center">
+					<div class="inner-column">
+						<h1>Welcome To <span>Team - 3 Project</span></h1>
+						<h4>Little Story</h4>
+						<p>He kan project hi complete website chu a la ni chiah lo nain mahse BCA Major atan chuan a tha thawkhatin kan hria ani. Kan project ah hian python library pakhat django framework kan hmanga, he framework hi minor project siam nana kan hman tho kha ani a, a powerful piah lamah a awlsam em em bawk ani. </p>
+						<p>Kan project kan thlan dawn hian awm hmun survey kan nei nasa hle a, enge mipui te hian an mamawh ang tih te, mahse college thil anih vangin mipui ai mah chuan kan tana chaw free dawn theihna tur awm ang kha kan ngaihtuah a, Hotel Chawngthu hi kan thlang ta ani.</p>
+						<a class="btn btn-lg btn-circle btn-outline-new-white" href="{% url 'HOTEL:table-reservation' %}">Reservation</a>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="inner-pt">
+						<p>Kan major project hi duh ang takin kan peih hman lo nain vawiin a kan rawn present thei hi kan in chhuang hle a, kan hriat angin python hi college ah kan zir lova, mahse he kan project hi Mizoram ah Hackathon rawn nei leh pawh nise, publis ve ka ngam ang.</p>
+						<p>Major project kan han khawih chiah hian kan project a kan hlawkna ber pakhat chu BCA major project hi software siam ringawt ni lovin Business lama hma min sawn tir tu ani a, Client te nena in dawr dan te, design pawimawhna hran hrang te, mimal chauha tih chi ni lovin team work anih zia te kan hre thar bawk ani.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End About -->
+	
+	
+
+{% endblock %}
